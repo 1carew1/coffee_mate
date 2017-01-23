@@ -4,7 +4,7 @@
     style="@style/appLayoutTheme"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/RelativeLayout1"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
-        android:padding="10dp" >
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/textView1"
@@ -46,7 +46,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center" >
+        android:gravity="center">
 
         <TextView
             android:id="@+id/helpTextView"
@@ -63,7 +63,7 @@
             android:id="@+id/footerLinearLayout"
             style="@style/footer"
             android:layout_alignParentBottom="true"
-            android:background="@color/bannerBGColor" >
+            android:background="@color/bannerBGColor">
 
             <TextView
                 android:layout_width="fill_parent"

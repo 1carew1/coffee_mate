@@ -56,9 +56,9 @@ public class Base extends AppCompatActivity {
     }
 
     public void menuHelp(MenuItem m) {
-        String greetingText = getString(R.string.informationLbl);
-        Toast.makeText(this, greetingText, Toast.LENGTH_LONG).show();
-        //  goToActivity(this, Help.class, null);
+//        String greetingText = getString(R.string.informationLbl);
+//        Toast.makeText(this, greetingText, Toast.LENGTH_LONG).show();
+        goToActivity(this, Help.class, null);
     }
 
     public void menuHome(MenuItem m) {

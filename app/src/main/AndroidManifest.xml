@@ -22,6 +22,10 @@
             android:name=".activities.Add"
             android:label="@string/addACoffeeLbl"
             android:theme="@style/AppTheme.ActionBar"></activity>
+        <activity
+            android:name=".activities.Help"
+            android:label="@string/appHelpTitle"
+            android:theme="@style/AppTheme.ActionBar"></activity>
     </application>
 
 </manifest>
