@@ -1,5 +1,6 @@
 package ie.cm.activities;
 
+import ie.cm.bundle.CoffeeBundle;
 import ie.cm.models.Coffee;
 import ie.cm.R;
 
@@ -33,20 +34,8 @@ public class Add extends Base implements
 
         Bundle bundle = getIntent().getExtras();
         String coffeeListKey = getString(R.string.coffeeListKey);
-        Log.v(TAG, "Trying to get coffee list from incoming bundle");
-        try {
-            coffeeList = (ArrayList<Coffee>) bundle.getSerializable(coffeeListKey);
-        } catch (Exception e) {
-            Log.e(TAG, "Issue getting List", e);
-        }
-        if (coffeeList == null) {
-            coffeeList = new ArrayList<Coffee>();
-        } else {
-            Log.v(TAG, "Current Coffees");
-            for (Coffee coffee : coffeeList) {
-                Log.v(TAG, "Coffee : " + coffee.toString());
-            }
-        }
+        CoffeeBundle coffeeBundle = new CoffeeBundle(bundle);
+        coffeeList = coffeeBundle.retrieveCoffeListFromBundle(coffeeListKey);
 
         Button saveButton = (Button) findViewById(R.id.saveCoffeeBtn);
         name = (EditText) findViewById(R.id.nameEditText);
@@ -74,7 +63,10 @@ public class Add extends Base implements
 
             coffeeList.add(coffee);
             Log.v(TAG, "Coffee Added : " + coffee.toString());
-            goToActivity(this, Home.class, null);
+            String coffeeListKey = getString(R.string.coffeeListKey);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(coffeeListKey, coffeeList);
+            goToActivity(this, Home.class, bundle);
         } else {
             String coffeeAddIssue = getString(R.string.coffeAddIssue);
             Toast.makeText(this, coffeeAddIssue, Toast.LENGTH_SHORT).show();
