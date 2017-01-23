@@ -12,6 +12,7 @@
     <string name="developer">Developed by Colm Carew</string>
 
     <string name="coffeAddIssue">You must Enter Something for \'Name\', \'Shop\' and \'Price\'</string>
+    <string name="coffeeListKey">myLovelyCoffeeList</string>
 
 
     <string name="versionLabel">Current Version:</string>

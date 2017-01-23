@@ -4,6 +4,7 @@ import ie.cm.models.Coffee;
 import ie.cm.R;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -11,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Add extends Base implements
         OnClickListener {
@@ -20,11 +23,30 @@ public class Add extends Base implements
     private EditText name, shop, price;
     private RatingBar ratingBar;
 
+    private static final String TAG = "AddActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add);
+
+        Bundle bundle = getIntent().getExtras();
+        String coffeeListKey = getString(R.string.coffeeListKey);
+        Log.v(TAG, "Trying to get coffee list from incoming bundle");
+        try {
+            coffeeList = (ArrayList<Coffee>) bundle.getSerializable(coffeeListKey);
+        } catch (Exception e) {
+            Log.e(TAG, "Issue getting List", e);
+        }
+        if (coffeeList == null) {
+            coffeeList = new ArrayList<Coffee>();
+        } else {
+            Log.v(TAG, "Current Coffees");
+            for (Coffee coffee : coffeeList) {
+                Log.v(TAG, "Coffee : " + coffee.toString());
+            }
+        }
 
         Button saveButton = (Button) findViewById(R.id.saveCoffeeBtn);
         name = (EditText) findViewById(R.id.nameEditText);
@@ -47,15 +69,15 @@ public class Add extends Base implements
 
         if ((coffeeName.length() > 0) && (coffeeShop.length() > 0)
                 && (price.length() > 0)) {
-            Coffee c = new Coffee(coffeeName, coffeeShop, ratingValue,
+            Coffee coffee = new Coffee(coffeeName, coffeeShop, ratingValue,
                     coffeePrice, false);
 
-            coffeeList.add(c);
+            coffeeList.add(coffee);
+            Log.v(TAG, "Coffee Added : " + coffee.toString());
             goToActivity(this, Home.class, null);
         } else {
             String coffeeAddIssue = getString(R.string.coffeAddIssue);
             Toast.makeText(this, coffeeAddIssue, Toast.LENGTH_SHORT).show();
         }
-
     }
 }

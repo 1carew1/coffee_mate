@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import ie.cm.R;
+import ie.cm.models.Coffee;
 
 import static ie.cm.R.layout.add;
 
@@ -36,6 +37,9 @@ public class Home extends Base {
                         }).show();
             }
         });
+
+        //Bootstrap some coffe
+        coffeeList.add(new Coffee("name", "shop", 1, 1, false));
     }
 
     @Override
@@ -54,7 +58,10 @@ public class Home extends Base {
     }
 
     public void add(View v) {
-        goToActivity(this, Add.class, null);
+        String coffeeListKey = getString(R.string.coffeeListKey);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(coffeeListKey, coffeeList);
+        goToActivity(this, Add.class, bundle);
     }
 
 }

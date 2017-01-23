@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Base extends AppCompatActivity {
-
     protected static ArrayList<Coffee> coffeeList = new ArrayList<Coffee>();
 
     protected void goToActivity(Activity current,
