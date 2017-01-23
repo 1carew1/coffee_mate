@@ -3,7 +3,7 @@
     style="@style/appLayoutTheme"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/RelativeLayout1"
@@ -12,20 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal"
-        android:padding="10dp" >
+        android:padding="10dp">
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center" >
+        android:gravity="center">
 
         <LinearLayout
             android:id="@+id/footerLinearLayout"
             style="@style/footer"
             android:layout_alignParentBottom="true"
-            android:background="@color/bannerBGColor" >
+            android:background="@color/bannerBGColor">
 
             <TextView
                 android:layout_width="fill_parent"
@@ -44,6 +44,7 @@
             android:layout_above="@+id/footerLinearLayout"
             android:layout_centerHorizontal="true"
             android:drawableTop="@drawable/ic_save_todo"
+            android:onClick="onClick"
             android:text="@string/saveCoffeeBtn" />
 
         <RatingBar
@@ -52,8 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:progressTint="@color/bannerBGColor"
             android:numStars="5"
+            android:progressTint="@color/bannerBGColor"
             android:rating="2"
             android:stepSize="1" />
 
@@ -64,7 +65,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignRight="@+id/coffeeRatingBar"
             android:ems="10"
-            android:inputType="textShortMessage" >
+            android:inputType="textShortMessage">
 
             <requestFocus />
 
@@ -77,8 +78,7 @@
             android:layout_alignLeft="@+id/nameEditText"
             android:layout_below="@+id/nameEditText"
             android:ems="10"
-            android:inputType="textShortMessage" >
-        </EditText>
+            android:inputType="textShortMessage"></EditText>
 
         <TextView
             android:id="@+id/ratingTextView"
