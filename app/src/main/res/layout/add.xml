@@ -52,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:progressTint="@color/bannerBGColor"
             android:numStars="5"
             android:rating="2"
             android:stepSize="1" />
