@@ -1,23 +1,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".Home">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Home">
 
-    <item android:id="@+id/menu_info"
+    <item
+        android:id="@+id/menu_info"
         android:icon='@drawable/about'
+        android:onClick="menuInfo"
+        android:orderInCategory="100"
         android:title="Info"
-        android:orderInCategory="100"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
-    <item android:id="@+id/menu_help"
+    <item
+        android:id="@+id/menu_help"
         android:icon="@drawable/help"
+        android:onClick="menuHelp"
+        android:orderInCategory="100"
         android:title="Help"
-        android:orderInCategory="100"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
-    <item android:id="@+id/menu_home"
+    <item
+        android:id="@+id/menu_home"
         android:icon="@drawable/home"
-        android:title="Home"
+        android:onClick="menuHome"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom"/>
+        android:title="Home"
+        app:showAsAction="ifRoom" />
 
 </menu>
